@@ -4,6 +4,13 @@ export default class App extends React.Component {
   componentDidMount() {
     console.log('Calling zopim API');
     $zopim(() => {
+      $zopim.livechat.setOnUnreadMsgs( numMessages =>	{
+        console.log("just got another message " + numMessages);
+        $(".chat_msg_holder").each(r => {
+          console.log(r);
+        })
+      });
+
       $zopim.livechat.setName(Meteor.settings.public.ZOPIM_CLIENT_NAME);
       $zopim.livechat.setEmail(Meteor.settings.public.ZOPIM_CLIENT_EMAIL);
     });
