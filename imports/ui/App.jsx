@@ -1,4 +1,5 @@
 import React from 'react';
+import MessagesFromWhatsApp from './components/MessagesFromWhatsApp.jsx';
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ export default class App extends React.Component {
       <div>
         <h1>Hello Zopim-WhatsApp</h1>
         <button onClick={this.handleSay}>Say something</button>
+        <MessagesFromWhatsApp />
       </div>
     );
   }

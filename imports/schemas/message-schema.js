@@ -1,4 +1,4 @@
-import { MESSAGE_TYPES } from '../libe/messages.js';
+import { MESSAGE_TYPES } from '../lib/messages.js';
 
 export const MessageSchema = new SimpleSchema({
   type: {
@@ -22,3 +22,5 @@ export const MessageSchema = new SimpleSchema({
     optional: true
   }
 });
+
+// Messages.insert({type: 'whatsapp-to-zopim', phoneNumber: "123", body: "This is an automated test", contactName: 'mHealth safe2choose', isSynced: false})
