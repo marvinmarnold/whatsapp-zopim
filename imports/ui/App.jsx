@@ -2,13 +2,15 @@ import React from 'react';
 
 export default class App extends React.Component {
   componentDidMount() {
-    console.log('Calling zopim API');
     $zopim(() => {
       $zopim.livechat.setOnUnreadMsgs( numMessages =>	{
-        console.log("just got another message " + numMessages);
-        $(".chat_msg_holder").each(r => {
-          console.log(r);
-        })
+        $('iframe').each((index, iframeContext) => {
+
+          const messageSelector = '.meshim_widget_widgets_chatLogRenderer_ChatMessage';
+          $(messageSelector, iframeContext.contentDocument).each((chatIndex, chatContext) => {
+              console.log(chatContext.innerHTML);
+          });
+        });
       });
 
       $zopim.livechat.setName(Meteor.settings.public.ZOPIM_CLIENT_NAME);
