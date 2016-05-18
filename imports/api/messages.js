@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Messages } from '../collections/messages.js';
 import { MessageSchema } from '../schemas/message-schema.js';
-import { sendZopimToWhatsApp } from '../lib/yowsup.js';
+import { sendZopimToWhatsApp } from '../lib/yowsup/yowsup.js';
 import { MESSAGE_TYPES } from '../lib/messages.js';
 
 Meteor.methods({
